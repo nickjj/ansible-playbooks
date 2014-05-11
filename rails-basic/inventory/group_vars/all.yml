@@ -1,0 +1,66 @@
+---
+# the user name used to make a connection to the server
+ansible_ssh_user: deploy
+
+# the user created on the system
+user_name: "{{ ansible_ssh_user }}"
+
+# load all passwords from a local location outside of version control
+secrets_load_path: ~/tmp/testproj/secrets/
+
+secrets_postgres_password: "{{ lookup('password', secrets_load_path + 'database_password') }}"
+secrets_redis_password: ""
+
+# postgres login credentials
+postgres_user: "{{ user_name }}"
+postgres_password: "{{ secrets_postgres_password }}"
+
+# redis configuration
+redis_bind: 0.0.0.0
+redis_port: 6379
+redis_version: 2.8.9
+redis_install_dir: /usr/local
+redis_dir: /usr/local/redis
+redis_password: false # must be set to true if you want to use a password
+
+# rails application configuration
+rails_deploy_app_name: testproj
+rails_deploy_user: "{{ user_name }}"
+
+rails_deploy_ssh_keypair_local_path: "{{ secrets_load_path }}"
+
+rails_deploy_git_url: "git@bitbucket.org:yourname/testproj.git"
+
+# you may have 1 or 100 app servers but you only want the migration
+# to be ran on a single app server. The server you specify as the
+# rails_deploy_migrate_master_host will be the server that the
+# migration gets ran on
+
+# the default value is the first server listed under your [app] group
+rails_deploy_migrate_master_host: "{{ groups['app'][0] }}"
+
+# environment variables for the rails application
+# edit this list to account for any variables your app needs
+rails_deploy_env:
+  RAILS_ENV: production
+
+  TESTPROJ_PROJECT_PATH: "{{ rails_deploy_path }}"
+
+  TESTPROJ_DATABASE_HOST: localhost
+  TESTPROJ_DATABASE_NAME: "{{ rails_deploy_app_name }}" 
+  TESTPROJ_DATABASE_USERNAME: "{{ postgres_user }}"
+  TESTPROJ_DATABASE_PASSWORD: "{{ postgres_password }}"
+  TESTPROJ_DATABASE_POOL: 25
+  TESTPROJ_DATABASE_TIMEOUT: 5000
+
+  TESTPROJ_CACHE_HOST: "{{ redis_bind }}"
+  TESTPROJ_CACHE_PORT: "{{ redis_port }}"
+  TESTPROJ_CACHE_DATABASE: 0
+  TESTPROJ_CACHE_PASSWORD: "{{ secrets_redis_password }}"
+
+# nginx configuration
+nginx_base_domain: 0.0.0.0
+nginx_upstream_name: "{{ rails_deploy_app_name }}"
+nginx_upstream_server: unix://{{ rails_deploy_path }}/tmp/puma.sock
+nginx_root_path: /home/{{ rails_deploy_user }}/{{ rails_deploy_app_name }}.git/public
+nginx_ssl_local_path: "{{ secrets_load_path }}"
