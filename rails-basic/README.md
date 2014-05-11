@@ -1,6 +1,6 @@
 ## What is rails-basic?
 
-It is a set of [ansible](http://www.ansible.com/home) roles to provision 1 or more servers to provision a pretty typical rails application.
+It is a set of [ansible](http://www.ansible.com/home) roles to setup 1 or more servers to fulfill the needs of a pretty typical rails application.
 
 ## Dependencies
 
@@ -8,7 +8,7 @@ Ansible version 1.6+ must be installed to use this playbook.
 
 `$ ansible-galaxy install nickjj.user nickjj.security nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.nginx nickjj.rails DavidWittman.redis`
 
-If you get permission errors then run the command with `sudo`. If you get an errors saying you already have them then add `--force` to the end of the command.
+If you get permission errors, run the command with `sudo`. If you get an errors saying you already have them then add `--force` to the end of the command.
 
 ## Roles used
 
@@ -24,7 +24,7 @@ If you are having issues running any tasks then please consult with the document
 
 ## Things you need to provide
 
-You need to have a rails application hosted on github, bitbucket or some other remote git host. It can be a default rails application however the app server you choose must write out a unix socket. You can see what you need to change in `group_vars/all.yml`.
+You need to have a rails application hosted on github, bitbucket or some other remote git host. It can be a default rails application, however the app server you choose must write out a unix socket. You can see what you need to change in `group_vars/all.yml`.
 
 ## Running the playbook
 
@@ -32,7 +32,7 @@ After you have configured `group_vars/all.yml` then it is go time. You can run t
 
 `$ ansible-playbook site.yml -i inventory/ -kK`
 
-You only need to supply the `-kK` flags on the first run. These are short for telling ansible to prompt you for the user's password and the sudo password. Once you do this ansible will kick in and provision the server to use ssh keys as long as everything is correct.
+You only need to supply the `-kK` flags on the first run. These are short for telling ansible to prompt you for the user's password and the sudo password. Once you do this then ansible will kick in and provision the server to use ssh keys as long as everything is correct.
 
 ## Video tutorial
 
