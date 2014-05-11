@@ -1,6 +1,6 @@
 ## What is rails-basic?
 
-It is a set of [ansible](http://www.ansible.com/home) roles to provision 1 or more servers to run a pretty typical rails application.
+It is a set of [ansible](http://www.ansible.com/home) roles to provision 1 or more servers to provision a pretty typical rails application.
 
 ## Dependencies
 
@@ -32,7 +32,7 @@ After you have configured `group_vars/all.yml` then it is go time. You can run t
 
 `$ ansible-playbook site.yml -i inventory/ -kK`
 
-You only need to supply the `-kK` flags on the first run. These are short for telling ansible to prompt you for the user's password and the sudo password. Once you do this ansible will kick in and provision the server to use ssh keys as long as everything is setup properly.
+You only need to supply the `-kK` flags on the first run. These are short for telling ansible to prompt you for the user's password and the sudo password. Once you do this ansible will kick in and provision the server to use ssh keys as long as everything is correct.
 
 ## Video tutorial
 
@@ -46,7 +46,7 @@ Make sure you check out the [general documentation](https://github.com/nickjj/an
 
 A way to manage your rails processes. This is more complicated than it appears at first glance because each rails app is very different. You may have sidekiq while I do not. Perhaps you're using unicorn while I'm using puma. There's many combinations.
 
-One thing is for sure, the process actions will be coded with SystemV (`/etc/init.d`) and then monitored with monit. I just have not yet had the time to think of a way to set it all up where people can control and monitor arbitrary processes in an easy way. If anyone wants to discuss this then feel free to open a ticket.
+One thing is for sure, the process actions will be coded with SystemV (`/etc/init.d`) and then monitored with monit. I have not had the time to think of a way to set it all up where people can control and monitor arbitrary processes in an easy way. If anyone wants to discuss this then feel free to open a ticket.
 
 ## License
 
