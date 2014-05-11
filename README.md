@@ -1,6 +1,6 @@
 ## What is ansible-playbooks?
 
-It is a set of [ansible](http://www.ansible.com/home) playbooks showing you how to assemble certain application stacks by providing full end-to-end solutions.
+It is a set of [ansible](http://www.ansible.com/home) playbooks showing you how to create certain full server stacks.
 
 ## Usage instructions
 
@@ -47,7 +47,7 @@ This is the playbook. It consists of 1 or more plays. A play is a series of task
 
 This is what I like to label as configuration data. Sensitive information may or may not be included here and may or may not be checked into version control. It's up to you. It is very beneficial to be able to use the same playbook for many different sites. Having your inventory isolated away from the playbook allows you to do this.
 
-Imagine having 10 rails applications. You wouldn't need 10 playbooks. You only need 1 playbook and a way to customize the configuration data like which IPs it should use, user credentials, ssl certificates and all of that fun stuff.
+Imagine having 10 rails app. You wouldn't need 10 playbooks. You only need 1 playbook and a way to customize the configuration data like which IPs it should use, user credentials, ssl certificates and all of that fun stuff.
 
 #### Securing passwords and other sensitive files
 
