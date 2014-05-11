@@ -4,9 +4,9 @@ It is a set of [ansible](http://www.ansible.com/home) playbooks showing you how 
 
 ## Usage instructions
 
-Each folder inside of this repo will contain an inventory along with a playbook to perform some type of server orchastration. Each folder also has its own readme for specific documentation.
+Each folder inside of this repo will contain an inventory along with a playbook to perform some type of server orchestration. Each folder also has its own readme for specific documentation.
 
-Each folder in this repo will be laid out in the same way and here are the rules and expectations:
+Each folder in this repo will be laid out in the same way. Here are the rules and expectations:
 
 - The playbook's name is the folder name for organizational purposes.
   - `site.yml` will exist inside of the playbook folder and this is the playbook itself.
@@ -37,7 +37,7 @@ For the sake of simplicity I'm not going to walk you through on how to use vagra
 
 #### The `hosts` file
 
-You will need to put the IP address of each server in the `hosts` file. If you only plan to spin up 1 server then you can just use the same IP address for each group. Setting up a dynamic hosts file is out of scope and is well documented else where.
+You will need to put the IP address of each server in the `hosts` file. If you only plan to spin up 1 server then you can just use the same IP address for each group. Setting up a dynamic hosts file is out of scope and is well documented elsewhere.
 
 #### The `site.yml` file
 
@@ -47,11 +47,11 @@ This is the playbook. It consists of 1 or more plays. A play is a series of task
 
 This is what I like to label as configuration data. Sensitive information may or may not be included here and may or may not be checked into version control. It's up to you. It is very beneficial to be able to use the same playbook for many different sites. Having your inventory isolated away from the playbook allows you to do this.
 
-Imagine having 10 rails app. You wouldn't need 10 playbooks. You only need 1 playbook and a way to customize the configuration data like which IPs it should use, user credentials, ssl certificates and all of that fun stuff.
+Imagine having 10 rails apps. You wouldn't need 10 playbooks. You only need 1 playbook and a way to customize the configuration data like which IPs it should use, user credentials, ssl certificates and all of that fun stuff.
 
 #### Securing passwords and other sensitive files
 
-Some of the playbooks contain roles that could contain sensitive information. Think about a postgres password, an ssl certificate or a private ssh key. You may want to keep them out of your inventory in case you're checking it in somewhere.
+Some of the playbooks have roles that may contain sensitive information such as a postgres password, an ssl certificate or a private ssh key. You may want to keep them out of your inventory in case you're checking it into version control.
 
 There are multiple ways to solve this issue but the easiest way I've found was to keep the secrets in some folder outside of version control and outside of your inventory folder. You can choose to encrypt these files locally or not, this is up to you and out of scope.
 
