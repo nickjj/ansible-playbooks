@@ -6,7 +6,7 @@ It is a set of [ansible](http://www.ansible.com/home) roles to setup 1 or more s
 
 Ansible version 1.6+ must be installed to use this playbook.
 
-`$ ansible-galaxy install nickjj.user nickjj.security nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.nginx nickjj.rails DavidWittman.redis`
+`$ ansible-galaxy install nickjj.user nickjj.security nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.nginx nickjj.rails nickjj.pumacorn DavidWittman.redis`
 
 If you get permission errors, run the command with `sudo`. If you get an errors saying you already have them then add `--force` to the end of the command.
 
@@ -18,6 +18,8 @@ If you are having issues running any tasks then please consult with the document
 - `nickjj.security` https://github.com/nickjj/ansible-security
 - `nickjj.postgres` https://github.com/nickjj/ansible-postgres
 - `nickjj.ruby` https://github.com/nickjj/ansible-ruby
+- `nickjj.rails` https://github.com/nickjj/ansible-rails
+- `nickjj.pumacorn` https://github.com/nickjj/ansible-pumacorn
 - `nickjj.nodejs` https://github.com/nickjj/ansible-nodejs
 - `nickjj.nginx` https://github.com/nickjj/ansible-nginx
 - `DavidWittman.redis` https://github.com/DavidWittman/ansible-redis
@@ -41,12 +43,6 @@ Not available right now.
 ## Having issues and are wondering what to do?
 
 Make sure you check out the [general documentation](https://github.com/nickjj/ansible-playbooks#general-information-and-terminology). Please open a ticket if you find a bug.
-
-## Important things left to do for this playbook
-
-A way to manage your rails processes. This is more complicated than it appears at first glance because each rails app is very different. You may have sidekiq while I do not. Perhaps you're using unicorn while I'm using puma. There's many combinations.
-
-One thing is for sure, the process actions will be coded with SystemV (`/etc/init.d`) and then monitored with monit. I have not had the time to think of a way to set it all up where people can control and monitor arbitrary processes in an easy way. If anyone wants to discuss this then feel free to open a ticket.
 
 ## License
 
