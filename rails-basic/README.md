@@ -27,7 +27,7 @@ If you are having issues running any tasks then please consult with the document
 
 ## Things you need to provide
 
-You need to have a rails application hosted on github, bitbucket or some other remote git host. It can be a default rails application, however the app server you choose must write out a unix socket and also be puma or unicorn. You will also want to set the rails cache backend to be redis if you want to leverage the cache server group, but you can simply remove the cache server from the `site.yml` file if you want to use the rails default instead.
+You need to have a rails application hosted on github, bitbucket or some other remote git host. It can be a default rails application, however the app server you choose must write out a unix socket and also be puma or unicorn. You will also want to set the rails cache backend to be redis if you want to leverage the cache server group, but you can simply remove the cache server from the `site.yml` and `hosts` files if you want to use the rails default instead.
 
 You can see what else you need to change in `group_vars/all.yml`.
 
