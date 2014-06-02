@@ -6,9 +6,9 @@ It is a set of [ansible](http://www.ansible.com/home) roles to setup 1 or more s
 
 Ansible version 1.6+ must be installed to use this playbook.
 
-`$ ansible-galaxy install nickjj.user nickjj.security nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.nginx nickjj.rails nickjj.pumacorn nickjj.monit DavidWittman.redis`
+`$ ansible-galaxy install nickjj.user nickjj.security nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.nginx nickjj.rails nickjj.pumacorn nickjj.monit DavidWittman.redis --force`
 
-If you get permission errors, run the command with `sudo`. If you get an errors saying you already have them then add `--force` to the end of the command.
+If you get permission errors, run the command with `sudo`.
 
 ## Roles used
 
