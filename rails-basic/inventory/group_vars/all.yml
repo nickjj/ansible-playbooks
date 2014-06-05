@@ -44,19 +44,19 @@ rails_deploy_migrate_master_host: "{{ groups['app'][0] }}"
 rails_deploy_env:
   RAILS_ENV: production
 
-  TESTPROJ_PROJECT_PATH: "{{ rails_deploy_path }}"
+  PROJECT_PATH: "{{ rails_deploy_path }}"
 
-  TESTPROJ_DATABASE_HOST: localhost
-  TESTPROJ_DATABASE_NAME: "{{ rails_deploy_app_name }}" 
-  TESTPROJ_DATABASE_USERNAME: "{{ postgres_user }}"
-  TESTPROJ_DATABASE_PASSWORD: "{{ postgres_password }}"
-  TESTPROJ_DATABASE_POOL: 25
-  TESTPROJ_DATABASE_TIMEOUT: 5000
+  DATABASE_HOST: localhost
+  DATABASE_NAME: "{{ rails_deploy_app_name }}" 
+  DATABASE_USERNAME: "{{ postgres_user }}"
+  DATABASE_PASSWORD: "{{ postgres_password }}"
+  DATABASE_POOL: 25
+  DATABASE_TIMEOUT: 5000
 
-  TESTPROJ_CACHE_HOST: "{{ redis_bind }}"
-  TESTPROJ_CACHE_PORT: "{{ redis_port }}"
-  TESTPROJ_CACHE_DATABASE: 0
-  TESTPROJ_CACHE_PASSWORD: "{{ secrets_redis_password }}"
+  CACHE_HOST: "{{ redis_bind }}"
+  CACHE_PORT: "{{ redis_port }}"
+  CACHE_DATABASE: 0
+  CACHE_PASSWORD: "{{ secrets_redis_password }}"
 
 # nginx configuration
 nginx_base_domain: 0.0.0.0
