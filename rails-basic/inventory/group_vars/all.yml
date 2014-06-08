@@ -8,8 +8,8 @@ user_name: "{{ ansible_ssh_user }}"
 # load all passwords from a local location outside of version control
 secrets_load_path: /home/yourname/tmp/testproj/secrets
 
-secrets_postgres_password: "{{ lookup('password', secrets_load_path + 'database_password') }}"
-secrets_redis_password: ""
+secrets_postgres_password: "{{ lookup('password', secrets_load_path + '/postgres_password') }}"
+secrets_redis_password: "{{ lookup('password', secrets_load_path + '/redis_password') }}"
 
 # postgres login credentials
 postgres_user: "{{ user_name }}"
@@ -21,7 +21,7 @@ redis_port: 6379
 redis_version: 2.8.9
 redis_install_dir: /usr/local
 redis_dir: /usr/local/redis
-redis_password: false # must be set to true if you want to use a password
+redis_password: "{{ secrets_redis_password }}"
 
 # rails application configuration
 rails_deploy_app_name: testproj
