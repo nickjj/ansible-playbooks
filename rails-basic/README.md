@@ -33,7 +33,7 @@ You can see what else you need to change in `group_vars/all.yml`.
 
 ## Running the playbook
 
-After you have configured `group_vars/all.yml` then it is go time. You can run the playbook by making sure you are in the `rails-basic` folder and then entering this command into your terminal:
+After you have configured `inventory/group_vars/all.yml` then it is go time. You can run the playbook by making sure you are in the `rails-basic` folder and then entering this command into your terminal:
 
 `$ ansible-playbook site.yml -i inventory/ -kK`
 
