@@ -5,6 +5,7 @@
     - openssh-server
     - build-essential
     - libpq-dev
+    - imagemagick
     - git
     - curl
 
