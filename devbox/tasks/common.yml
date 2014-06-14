@@ -1,0 +1,17 @@
+---
+- name: ensure common packages are installed
+  apt: pkg={{ item }} state=latest update_cache=true cache_valid_time={{ apt_cache_valid_time }}
+  with_items:
+    - openssh-server
+    - build-essential
+    - git
+    - curl
+
+- name: ensure sudoers.d is enabled
+  lineinfile: dest=/etc/sudoers state=present backup=yes regexp="^#includedir /etc/sudoers.d" line="#includedir /etc/sudoers.d"
+
+- name: ensure user can execute sudo commands without a password
+  copy: content="%{{ user_name }} ALL=(ALL) NOPASSWD:ALL" dest=/etc/sudoers.d/{{ user_name }} owner=root group=root mode=0440
+
+- name: ensure ssh starts on a fresh boot
+  service: name=ssh state=started enabled=yes

@@ -1,0 +1,7 @@
+---
+- name: ensure a devbox's backup files are restored
+  hosts: localhost
+  sudo: true
+
+  tasks:
+    - { include: tasks/restore.yml, sudo: false, remote_user: "{{ user_name }}", tags: restore }

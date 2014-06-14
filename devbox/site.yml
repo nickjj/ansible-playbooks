@@ -1,0 +1,17 @@
+---
+- name: ensure a devbox is configured
+  hosts: localhost
+  sudo: true
+
+  pre_tasks:
+    - { include: tasks/common.yml, tags: common }
+
+  roles:
+    - { role: gpstathis.elasticsearch, tags: elasticsearch }
+    - { role: nickjj.postgres, tags: postgres }
+    - { role: DavidWittman.redis, tags: redis }
+    - { role: nickjj.ruby, sudo: false, remote_user: "{{ user_name }}", tags: ruby }
+    - { role: nickjj.nodejs, tags: nodejs }
+
+  post_tasks:
+    - { include: tasks/custom.yml, sudo: false, remote_user: "{{ user_name }}", tags: custom }

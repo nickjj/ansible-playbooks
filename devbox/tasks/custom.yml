@@ -1,0 +1,27 @@
+---
+- name: ensure home directories are created
+  file: path=/home/{{ user_name }}/{{ item }} state=directory
+  with_items:
+    - bin
+    - dev
+    - dev/misc
+    - dev/tmp
+
+- name: ensure home files are created
+  copy: src=files/{{ item }} dest=/home/{{ user_name }}/{{ item }}
+  with_items:
+    - .gemrc
+    - .bashrc
+
+- name: ensure monitor config is deleted
+  file: path=/home/{{ user_name }}/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml state=absent
+  when: devbox_delete_monitor_config
+
+- name: ensure gems are installed
+  command: /home/{{ user_name }}/.rvm/bin/rvm default do gem install {{ item }}
+  with_items:
+    - bundler
+    - rails
+
+- name: ensure elastic search does not start by default
+  service: name=elasticsearch state=stopped

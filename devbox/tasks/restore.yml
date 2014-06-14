@@ -1,0 +1,5 @@
+---
+# this is NOT idemponent because I do not know how to preserve the
+# mode with ansible's copy command, you should only run this restore once
+- name: ensure backup files are restored
+  command: cp -r --preserve=mode,timestamps /home/{{ user_name }}/backup/. /home/{{ user_name }}

@@ -1,0 +1,61 @@
+---
+ansible_connection: local
+
+# -----------------------------------------------------------------------------
+# common
+# -----------------------------------------------------------------------------
+user_name: nick
+apt_cache_valid_time: 86400
+
+# -----------------------------------------------------------------------------
+# elastic search
+# -----------------------------------------------------------------------------
+# default values you can overwrite with documentation:
+# https://github.com/Traackr/ansible-elasticsearch/blob/master/defaults/main.yml
+# -----------------------------------------------------------------------------
+
+elasticsearch_version: 1.2.1
+elasticsearch_timezone: "America/New_York"
+
+# -----------------------------------------------------------------------------
+# postgres
+# -----------------------------------------------------------------------------
+# default values you can overwrite with documentation:
+# https://github.com/nickjj/ansible-postgres/#role-variables
+# -----------------------------------------------------------------------------
+
+postgres_user: "{{ user_name }}"
+postgres_password: pleasedonthackme
+
+# -----------------------------------------------------------------------------
+# redis
+# -----------------------------------------------------------------------------
+# default values you can overwrite with documentation:
+# https://github.com/DavidWittman/ansible-redis/blob/master/defaults/main.yml
+# -----------------------------------------------------------------------------
+
+redis_install_dir: /usr/local
+redis_dir: /usr/local/redis
+
+# -----------------------------------------------------------------------------
+# ruby
+# -----------------------------------------------------------------------------
+# default values you can overwrite with documentation:
+# https://github.com/nickjj/ansible-ruby/#role-variables
+# -----------------------------------------------------------------------------
+
+ruby_temp_download_path: /tmp
+ruby_rvm_install_path: /home/{{ user_name }}/.rvm
+
+# -----------------------------------------------------------------------------
+# nodejs
+# -----------------------------------------------------------------------------
+# default values you can overwrite with documentation:
+# https://github.com/nickjj/ansible-nodejs/#role-variables
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# custom
+# -----------------------------------------------------------------------------
+
+devbox_delete_monitor_config: false
