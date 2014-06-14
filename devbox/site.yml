@@ -12,6 +12,7 @@
     - { role: DavidWittman.redis, tags: redis }
     - { role: nickjj.ruby, sudo: false, remote_user: "{{ user_name }}", tags: ruby }
     - { role: nickjj.nodejs, tags: nodejs }
+    - { role: nickjj.xampp, tags: xampp }
 
   post_tasks:
     - { include: tasks/custom.yml, sudo: false, remote_user: "{{ user_name }}", tags: custom }
