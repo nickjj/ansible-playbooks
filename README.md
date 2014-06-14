@@ -84,6 +84,9 @@ I will also try to post short video tutorials for each one showing you how to se
 - [rails-basic](https://github.com/nickjj/ansible-playbooks/tree/master/rails-basic)
   - Setup a full basic rails stack.
 
+- [devbox](https://github.com/nickjj/ansible-playbooks/tree/master/devbox)
+  - Setup a local development box geared towards ruby/node development.
+
 ## License
 
 MIT
