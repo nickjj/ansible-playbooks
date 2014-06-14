@@ -4,6 +4,7 @@
   with_items:
     - openssh-server
     - build-essential
+    - libpq-dev
     - git
     - curl
 
