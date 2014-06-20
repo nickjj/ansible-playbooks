@@ -7,6 +7,7 @@
     - { include: tasks/common.yml, tags: common }
 
   roles:
+    - { role: nickjj.dnsmasq, tags: dnsmasq }
     - { role: gpstathis.elasticsearch, tags: elasticsearch }
     - { role: nickjj.postgres, tags: postgres }
     - { role: DavidWittman.redis, tags: redis }

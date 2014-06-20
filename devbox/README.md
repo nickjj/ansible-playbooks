@@ -6,7 +6,7 @@ It is a set of [ansible](http://www.ansible.com/home) roles and tasks to setup a
 
 You must install ansible on the development box first as it runs on localhost.
 
-`$ ansible-galaxy install nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.xampp gpstathis.elasticsearch DavidWittman.redis --force`
+`$ ansible-galaxy install nickjj.dnsmasq nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.xampp gpstathis.elasticsearch DavidWittman.redis --force`
 
 If you get permission errors, run the command with `sudo`.
 
@@ -14,6 +14,7 @@ If you get permission errors, run the command with `sudo`.
 
 If you are having issues running any tasks then please consult with the documentation for that specific role.
 
+- `nickjj.dnsmasq` https://github.com/nickjj/ansible-dnsmasq
 - `nickjj.postgres` https://github.com/nickjj/ansible-postgres
 - `nickjj.ruby` https://github.com/nickjj/ansible-ruby
 - `nickjj.nodejs` https://github.com/nickjj/ansible-nodejs
