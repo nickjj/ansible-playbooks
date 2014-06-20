@@ -4,6 +4,7 @@
   with_items:
     - openssh-server
     - build-essential
+    - dnsmasq
     - libpq-dev
     - imagemagick
     - git
@@ -15,5 +16,21 @@
 - name: ensure user can execute sudo commands without a password
   copy: content="%{{ user_name }} ALL=(ALL) NOPASSWD:ALL" dest=/etc/sudoers.d/{{ user_name }} owner=root group=root mode=0440
 
+- name: ensure dnsmasq is configured
+  copy: src=devld.conf dest=/etc/dnsmasq.d/devld.conf
+  notify:
+    - restart dnsmasq
+
+- name: ensure resolv is configured
+  copy: src=resolv.conf dest=/etc/resolvconf/resolv.conf.d/base
+  register: resolv_content
+
+- name: ensure network is restarted
+  shell: ifdown -a && ifup -a
+  when: resolv_content.changed
+
 - name: ensure ssh starts on a fresh boot
   service: name=ssh state=started enabled=yes
+
+- name: ensure dnsmasq starts on a fresh boot
+  service: name=dnsmasq state=started enabled=yes

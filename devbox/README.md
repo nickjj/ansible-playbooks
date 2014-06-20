@@ -1,6 +1,6 @@
 ## What is devbox?
 
-It is a set of [ansible](http://www.ansible.com/home) roles and tasks to setup a development box. I specifically use it on **Xubuntu 14.04** but it should be usable for most ubuntu distros.
+It is a set of [ansible](http://www.ansible.com/home) roles and tasks to setup a development box. I specifically use it on **Xubuntu 14.04** but it should be usable for most ubuntu distros
 
 ## Dependencies
 
