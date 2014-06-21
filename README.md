@@ -2,11 +2,42 @@
 
 It is a set of [ansible](http://www.ansible.com/home) playbooks showing you how to create certain full server stacks.
 
+## Installation
+
+#### Installing ansible through a self built debian package
+
+You may want to check what the latest stable version of ansible is before copying and running this command. Adjust the version at the end of the command.
+
+`curl -s https://raw.githubusercontent.com/nickjj/ansible-playbooks/master/ansible-install.sh | bash /dev/stdin v1.6.2`
+
+Afterwards verify that ansible is installed by running `ansible --version`.
+
+#### Cloning this repo
+
+`$ git clone https://github.com/nickjj/ansible-playbooks.git`
+
+#### Doing everything as a 1 liner
+
+Goto a directory where you want the playbook to be git cloned and then run this command:
+
+```
+curl -s https://raw.githubusercontent.com/nickjj/ansible-playbooks/master/ansible-install.sh | bash /dev/stdin v1.6.2 \  
+&& git clone https://github.com/nickjj/ansible-playbooks.git
+```
+
 ## Usage instructions
+
+#### Setting up a virtual machine to test on
+
+You have a few options to test the playbooks. You can setup a virtual machine using something like virtualbox or you can use vagrant. Ansible also supports popular cloud services but you're on your own if you want to deploy to them.
+
+For the sake of simplicity I'm not going to walk you through on how to use vagrant. There's plenty of documentation on how to do this available on Google. From this point on I'm going to assume you have access to at least 1 IP address that you can ssh into which is where you will be testing the playbooks. You should also use ubuntu server 12.04 LTS.
+
+#### File structure break down
 
 Each folder inside of this repo will contain an inventory along with a playbook to perform some type of server orchestration. Each folder also has its own readme for specific documentation.
 
-Each folder in this repo will be laid out in the same way. Here are the rules and expectations:
+Each folder in this repo will be laid out in a similar way. Here are the rules and expectations:
 
 - The playbook's name is the folder name for organizational purposes.
   - `site.yml` will exist inside of the playbook folder and this is the playbook itself.
@@ -18,20 +49,6 @@ Each folder in this repo will be laid out in the same way. Here are the rules an
 Normally you would not want your `inventory` folder inside of a playbook. I am only doing this to keep things contained for the repo's sake if you decide to clone it. On your workstation/devbox you should have an `inventory` folder somewhere that is outside of all of your playbooks.
 
 The basic idea is that your configuration is isolated from the implementation details of the playbook. This allows you to share your playbooks or push them somewhere without having to worry about leaking sensitive information.
-
-## Installation
-
-Make sure you have [ansible installed](http://docs.ansible.com/intro_installation.html) on your workstation before doing anything. Verify that you can run ansible on your workstation by typing `ansible --version`. You should see it output a version number.
-
-#### Cloning this repo
-
-`$ git clone https://github.com/nickjj/ansible-playbooks.git`
-
-#### Setting up a virtual machine to test on
-
-You have a few options to test the playbooks. You can setup a virtual machine using something like virtualbox or you can use vagrant. Ansible also supports popular cloud services but you're on your own if you want to deploy to them.
-
-For the sake of simplicity I'm not going to walk you through on how to use vagrant. There's plenty of documentation on how to do this available on Google. From this point on I'm going to assume you have access to at least 1 IP address that you can ssh into which is where you will be testing the playbooks. You should also use ubuntu server 12.04 LTS.
 
 ## General information and terminology
 
