@@ -4,7 +4,7 @@ It is a set of [ansible](http://www.ansible.com/home) roles and tasks to setup a
 
 ## Dependencies
 
-You must install ansible on the development box first as it runs on localhost.
+You must [install ansible](https://github.com/nickjj/ansible-playbooks#installing-ansible-through-a-self-built-debian-package) on the development box first as it runs on localhost.
 
 `$ ansible-galaxy install nickjj.dnsmasq nickjj.postgres nickjj.ruby nickjj.nodejs nickjj.xampp gpstathis.elasticsearch DavidWittman.redis --force`
 
