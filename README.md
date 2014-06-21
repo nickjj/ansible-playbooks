@@ -20,10 +20,7 @@ Afterwards verify that ansible is installed by running `ansible --version`.
 
 Goto a directory where you want the playbook to be git cloned and then run this command:
 
-```
-curl -s https://raw.githubusercontent.com/nickjj/ansible-playbooks/master/ansible-install.sh | bash /dev/stdin v1.6.2 \  
-&& git clone https://github.com/nickjj/ansible-playbooks.git
-```
+`curl -s https://raw.githubusercontent.com/nickjj/ansible-playbooks/master/ansible-install.sh | bash /dev/stdin v1.6.2 && git clone https://github.com/nickjj/ansible-playbooks.git`
 
 ## Usage instructions
 
