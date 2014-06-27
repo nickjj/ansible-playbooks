@@ -21,6 +21,13 @@ secrets_redis_password: "{{ lookup('password', secrets_load_path + '/redis_passw
 ansible_ssh_user: deploy
 
 # -----------------------------------------------------------------------------
+# locale
+# -----------------------------------------------------------------------------
+# default values you can overwrite with documentation:
+# https://github.com/nickjj/ansible-locale/#role-variables
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
 # user
 # -----------------------------------------------------------------------------
 # default values you can overwrite with documentation:

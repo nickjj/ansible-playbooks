@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# modified from:
-# https://github.com/ginas/ginas/
+# modified from: https://github.com/ginas/ginas/
 
 set -e
 
