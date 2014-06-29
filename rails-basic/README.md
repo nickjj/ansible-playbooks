@@ -6,7 +6,7 @@ It is a set of [ansible](http://www.ansible.com/home) roles to setup 1 or more s
 
 Ansible version 1.6+ must be installed to use this playbook.
 
-`$ ansible-galaxy install nickjj.locale nickjj.user nickjj.security nickjj postgres nickjj.ruby nickjj.nodejs nickjj.nginx nickjj.rails nickjj.pumacorn nickjj.monit DavidWittman.redis --force`
+`$ ansible-galaxy install nickjj.locale nickjj.sshd nickjj.ferm nickjj.fail2ban nickjj.user nickjj postgres nickjj.ruby nickjj.nodejs nickjj.nginx nickjj.rails nickjj.pumacorn nickjj.monit DavidWittman.redis --force`
 
 If you get permission errors, run the command with `sudo`.
 
@@ -15,8 +15,10 @@ If you get permission errors, run the command with `sudo`.
 If you are having issues running any tasks then please consult with the documentation for that specific role.
 
 - `nickjj.locale` https://github.com/nickjj/ansible-locale [![Build Status](https://secure.travis-ci.org/nickjj/ansible-locale.png)](http://travis-ci.org/nickjj/ansible-locale)
+- `nickjj.sshd` https://github.com/nickjj/ansible-sshd [![Build Status](https://secure.travis-ci.org/nickjj/ansible-sshd.png)](http://travis-ci.org/nickjj/ansible-sshd)
+- `nickjj.ferm` https://github.com/nickjj/ansible-ferm [![Build Status](https://secure.travis-ci.org/nickjj/ansible-ferm.png)](http://travis-ci.org/nickjj/ansible-ferm)
+- `nickjj.fail2ban` https://github.com/nickjj/ansible-fail2ban [![Build Status](https://secure.travis-ci.org/nickjj/ansible-fail2ban.png)](http://travis-ci.org/nickjj/ansible-fail2ban)
 - `nickjj.user` https://github.com/nickjj/ansible-user [![Build Status](https://secure.travis-ci.org/nickjj/ansible-user.png)](http://travis-ci.org/nickjj/ansible-user)
-- `nickjj.security` https://github.com/nickjj/ansible-security
 - `nickjj.postgres` https://github.com/nickjj/ansible-postgres [![Build Status](https://secure.travis-ci.org/nickjj/ansible-postgres.png)](http://travis-ci.org/nickjj/ansible-postgres)
 - `nickjj.ruby` https://github.com/nickjj/ansible-ruby [![Build Status](https://secure.travis-ci.org/nickjj/ansible-ruby.png)](http://travis-ci.org/nickjj/ansible-ruby)
 - `nickjj.rails` https://github.com/nickjj/ansible-rails [![Build Status](https://secure.travis-ci.org/nickjj/ansible-rails.png)](http://travis-ci.org/nickjj/ansible-rails)
